@@ -1,24 +1,32 @@
-<div>
+<div action = "/myreviews/show">
     <div class="bg-light border border-primary p-3 rounded m-3">
         <h1 class="display-4 text-center">My Reviews</h1>
-        <p class="lead text-center"><%= reviews.length %>  reviews from <%= user['username'] %></p>
+        <p class="lead text-center"><%= newreviews.length %> reviews</p>
     </div>
     <hr>
-    <ol>
-        <% for (review of reviews){%>
-            <li class="mb-2">          
-                <b><%= review.name%>:</b><i><%= review.rating %></i>
-                <!-- <% if (review.p) {%>
-                    <a href="/todo/completed/false/<%= review._id%>">  Done</a>
-                <% } else {%>
-                    <a href="/todo/completed/true/<%= review._id%>"> In Process</a>
-                <% } %> -->
-                <br>
-                <%= review.storyandplot %> 
-                <!-- <a href="/todo/delete/<%= review._id%>">(delete)</a> -->
-            </li>
-        <% }%>
-    </ol>
+    <div>
+        <h2>
+            Nazari's Drama Reviews
+        </h2>
+    </div>
+
+    <%for (review of newreviews) {%>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <div class="card-header">Drama</div>
+            <h5 class="card-title"><%= review.name%></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Overall Rating: <%=review.rating%></h6>
+            <h6 class="card-subtitle mb-2 text-muted">Romance and Chemistry Rating: <%=review.romanceandchemistry%></h6>
+            <h6 class="card-subtitle mb-2 text-muted">Story and Plot Rating: <%=review.storyandplot%></h6>
+            <h6 class="card-subtitle mb-2 text-muted">Pathos and Production Rating: <%=review.pathosandproduction%></h6>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Date Started: <%=review.datestarted%></li>
+                <li class="list-group-item">Date Completed: <%=review.datecompleted%></li>
+            </ul>
+            <p class="card-text"><%=review.review%></p>
+            </div>
+        </div>
+    <% }%>
     <hr>
 </div>
 

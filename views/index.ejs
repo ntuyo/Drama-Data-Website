@@ -10,14 +10,73 @@
 
         
     </div>    
-    <% if (loggedIn) {%>  
-        <form method="post" action="/courses/bySubject">
-            Show Courses by Subject: 
-              <input type="text" name="subject" 
-                     placeholder="e.g. COSI">
+    <% if (loggedIn) {%>
+        <div>
+            <h2>
+                Nazari's Drama Reviews
+            </h2>
+        </div>
+        <div class = row>
+            <%for (oldreview of oldreviews) {%>
+                <div class="card col-md-6" style="width: 18rem;">
+                    <div class="card-body">
+                    <div class="card-header">Drama</div>
+                    <h5 class="card-title"><%= oldreview.name %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Overall Rating: <%=oldreview.rating%></h6>
+                    <%if (oldreview.romanceandchemistry !== null) {%>
+                    <h6 class="card-subtitle mb-2 text-muted">Romance and Chemistry Rating: <%=oldreview.romanceandchemistry%></h6>
+                    <%}%>
+                    <%if (oldreview.romanceandchemistry !== null) {%>
+                    <h6 class="card-subtitle mb-2 text-muted">Story and Plot Rating: <%=oldreview.storyandplot%></h6>
+                    <%}%>
+                    <%if (oldreview.romanceandchemistry !== null) {%>
+                    <h6 class="card-subtitle mb-2 text-muted">Pathos and Production Rating: <%=oldreview.pathosandproduction%></h6>
+                    <%}%>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Date Started: <%=oldreview.datestarted%></li>
+                        <li class="list-group-item">Date Completed: <%=oldreview.datecompleted%></li>
+                    </ul>
+                    <!-- <p class="card-text"><%=oldreview.review%></p> -->
+                    </div>
+                </div>
+            <% }%>
+        </div>
+        
+        <!-- <form method="post" action="/myreviews/show">
+            Show My Reviews
             <input type="submit">
-        </form>
+        </form> -->
     <% } else {%>
+        <div>
+            <h2>
+                Nazari's Drama Reviews
+            </h2>
+        </div>
+        <div class = row>
+            <%for (oldreview of oldreviews) {%>
+                <div class="card col-md-6" style="width: 18rem;">
+                    <div class="card-body">
+                    <div class="card-header">Drama</div>
+                    <h5 class="card-title"><%= oldreview.name %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Overall Rating: <%=oldreview.rating%></h6>
+                    <%if (oldreview.romanceandchemistry !== null) {%>
+                    <h6 class="card-subtitle mb-2 text-muted">Romance and Chemistry Rating: <%=oldreview.romanceandchemistry%></h6>
+                    <%}%>
+                    <%if (oldreview.romanceandchemistry !== null) {%>
+                    <h6 class="card-subtitle mb-2 text-muted">Story and Plot Rating: <%=oldreview.storyandplot%></h6>
+                    <%}%>
+                    <%if (oldreview.romanceandchemistry !== null) {%>
+                    <h6 class="card-subtitle mb-2 text-muted">Pathos and Production Rating: <%=oldreview.pathosandproduction%></h6>
+                    <%}%>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Date Started: <%=oldreview.datestarted%></li>
+                        <li class="list-group-item">Date Completed: <%=oldreview.datecompleted%></li>
+                    </ul>
+                    <!-- <p class="card-text"><%=oldreview.review%></p> -->
+                    </div>
+                </div>
+            <% }%>
+        </div>
 
     <% }%>
 
