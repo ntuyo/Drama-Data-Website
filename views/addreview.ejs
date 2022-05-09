@@ -1,0 +1,42 @@
+<div class = "bg-light border border-primary p-3 rounded m-3">
+  <h1> Add Drama Review </h1>
+</div>
+
+<form method="post" action="/addreview/add">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Drama Name: </label>
+        <input type="text" name = "name">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Rating: </label>
+        <input type="number" step="0.1" class="form-control" min = "0" max = "10" name = "rating">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Romance and Chemistry Rating: </label>
+      <input type="number" step="0.1" class="form-control" min = "0" max = "2" name = "romanceandchemistry" >
+      <br>
+      <label>Story and Plot Rating: </label>
+      <input type="number" step="0.1" class="form-control" min = "0" max = "6" name = "storyandplot" >
+      <br>
+      <label>Pathos and Production Rating: </label>
+      <input type="number" step="0.1" class="form-control" min = "0" max = "2" name = "pathosandproduction" >
+    </div>
+    
+    <div class="form-group">
+        <label for="example">Date Started: </label>
+        <input type="date" name = "datestarted" >
+        <br>
+
+        <label>Date Completed: </label>
+        <input type="date" name = "datecompleted">
+    </div>
+
+    <div class="form-group">
+      <label>Review</label>
+      <textarea class="form-control" rows="5" name = "review"></textarea>
+    </div>
+    <input class="btn btn-primary" type="submit">
+  </form>
+
