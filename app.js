@@ -35,7 +35,8 @@ const oldreviews = require('./public/data/dramadata0418-0521.json')
 // *********************************************************** //
 
 const mongoose = require( 'mongoose' );
-const mongodb_URI = process.env.mongodb_URI
+const mongodb_URI = 'mongodb+srv://dramaTrack:stemisbae123@cluster0.cr2ng.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+// const mongodb_URI = process.env.mongodb_URI
 mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
 mongoose.set('useFindAndModify', false); 
 mongoose.set('useCreateIndex', true);
@@ -211,8 +212,8 @@ app.use(function(err, req, res, next) {
 //  Starting up the server!
 // *********************************************************** //
 //Here we set the port to use between 1024 and 65535  (2^16-1)
-const port = process.env.PORT || "5000";
-// const port = "5000";
+// const port = process.env.PORT || "5000";
+const port = "5000";
 
 app.set("port", port);
 
