@@ -10,75 +10,10 @@
 
         
     </div>    
-    <% if (loggedIn) {%>
+    <% if (!loggedIn) {%>
         
     <% } else {%>
-        <div>
-            <h2>
-                Nazari's Drama Reviews
-            </h2>
-        </div>
-        <div> 
-            <h3>
-                Ratings
-            </h3>
-        </div>
-        <div>
-            <% oldreview_count = oldreviews.length %>
-            <% for(var i = 0; i < oldreviews.length; i++) { %>
-                <% if (i === 0 || i % 3 === 0) { %>
-                  <div class="row">
-                <% } else {%>
-                  <div class="col-sm">
-                    <div class="card border-danger mb-3" style="max-width: 20rem;">
-                        <div class="card-body">
-                           
-                        </div>
-                    </div>
-                  </div>
-                <% } %>
-                <% if (i === 0 || i % 3 === 0) { %>
-                  </div>
-                <% } %>
-              <% } %>
-        </div>
-
-
-        <div>
-            <h3>
-                Reviews
-            </h3>
-        </div>
-        <div class = "row-cols-md-1">
-            <%for (oldreview of oldreviews) {
-                if (oldreview.review !== "") {%>
-                    <div class="col mb-4">
-                    <div class="card">
-                        <div class="card-header"><%= oldreview.name %></div>
-                        <div class="card-body">
-                        <h6 class="card-subtitle mb-2 text-muted">Overall Rating: <%=oldreview.rating%></h6>
-                        <%if (oldreview.romanceandchemistry !== null) {%>
-                        <h6 class="card-subtitle mb-2 text-muted">Romance and Chemistry Rating: <%=oldreview.romanceandchemistry%></h6>
-                        <%}%>
-                        <%if (oldreview.storyandplot !== null) {%>
-                        <h6 class="card-subtitle mb-2 text-muted">Story and Plot Rating: <%=oldreview.storyandplot%></h6>
-                        <%}%>
-                        <%if (oldreview.pathosandproduction !== null) {%>
-                        <h6 class="card-subtitle mb-2 text-muted">Pathos and Production Rating: <%=oldreview.pathosandproduction%></h6>
-                        <%}%>
-                        <ul class="list-group list-group-flush">
-                            <%if (oldreview.datestarted !== null) {%>
-                                <li class="list-group-item">Date Started: <%=oldreview.datestarted%></li>                            <%}%>
-                            <%if (oldreview.datecompleted !== null) {%>
-                                <li class="list-group-item">Date Completed: <%=oldreview.datecompleted%></li>
-                                <%}%>
-                        </ul>
-                            <p class="card-text"><%=oldreview.review%></p>
-                        </div>
-                    </div>
-                    </div>
-                <% }}%>
-        </div>
+        
 
     <% }%>
 

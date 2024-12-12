@@ -6,9 +6,9 @@ const ObjectId = Schema.Types.ObjectId;
 var reviewSchema = Schema( {
   userId: ObjectId,
   dramaname: String,
-  numofepisods: Number,
+  episodenum: Number,
   rating: Number,
-  review: String
+  notes: String
 } );
 
-module.exports = mongoose.model('Drama', reviewSchema );
+module.exports = mongoose.model('Episode', reviewSchema );
